@@ -10,7 +10,8 @@
             "cache": false
         },
         "db:push": {
-            "cache": false
+            "cache": false,
+            "interactive": true
         },
         "db:studio": {
             "cache": false
@@ -21,7 +22,7 @@
         },
         "dev": {
             "dependsOn": ["^db:generate"],
-            "persistent": true,
+            "persistent": false,
             "cache": false
         },
         "format": {
@@ -29,11 +30,11 @@
             "outputMode": "new-only"
         },
         "lint": {
-            "dependsOn": ["^topo"],
+            "dependsOn": ["^topo", "^build"],
             "outputs": ["node_modules/.cache/.eslintcache"]
         },
         "typecheck": {
-            "dependsOn": ["^topo"],
+            "dependsOn": ["^topo", "^build"],
             "outputs": ["node_modules/.cache/tsbuildinfo.json"]
         },
         "clean": {
